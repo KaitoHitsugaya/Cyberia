@@ -1,0 +1,28 @@
+@import '@/shared/config/theme.scss';
+@import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;700&family=Wix+Madefor+Text:wght@400;500;600;700&display=swap');
+
+:root {
+  --font-heading: #{$font-heading};
+  --font-body: #{$font-body};
+  --color-primary: #{$color-primary};
+  --color-dark: #{$color-dark};
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  font-family: var(--font-body);
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 600;
+}
