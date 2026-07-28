@@ -1,0 +1,84 @@
+@import '@/shared/config/theme.scss';
+.HeroSection{
+  background: linear-gradient(to right, #2D41F9 0%, #1B2793 100%);
+  border-radius: 24px;
+  padding: 93px 120px 66px;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  margin-top: 40px;
+  &Background{
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    &People{
+      position: absolute;
+      right: 40px;
+      width: 640px;
+      height: 100%;
+      object-fit: cover;
+      top: 30px;
+      z-index: 2;
+    }
+    &StarOne{
+      position: absolute;
+      right: 0;
+      top: 0;
+      z-index: 1;
+      object-fit: cover;
+    }
+    &StarTwo{
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: 1;
+    }
+  }
+  &Container{
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    gap: 20px;
+    z-index: 3;
+    &Block{
+      display: flex;
+      gap: 8px;
+      flex-direction: column;
+      width: 45%;
+      position: relative;
+      &Backround{
+        position: absolute;
+        top: -5px;
+        right: -40px;
+        background: $color-dark;
+        padding:  9px 32px;
+        gap: 8px;
+        display: flex;
+        border-radius: 100px;
+        max-width: 300px;
+        align-items: center;
+        box-sizing: border-box;
+        transform: rotate(-3deg);
+        &Title{
+          font-size: 24px;
+          text-align: center;
+          color: #fff;
+          font-family: var(--font-heading);
+        }
+        &Text{
+          color: #fff;
+          font-size: 14px;
+        }
+      }
+
+      &Title{
+        font-size: 32px;
+        color: $color-white;
+        font-family: var(--font-heading);
+      }
+      &Content{
+      }
+    }
+  }
+}

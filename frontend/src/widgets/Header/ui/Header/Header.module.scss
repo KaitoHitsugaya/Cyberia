@@ -1,0 +1,15 @@
+.Header{
+  display: flex;
+  &Container{
+    width: 100%;
+    &Nav{
+      display: flex;
+      justify-content: space-between;
+      align-content: center;
+      width: 100%;
+      &Block{
+        display: flex;
+      }
+    }
+  }
+}

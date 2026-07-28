@@ -1,0 +1,33 @@
+@import '@/shared/config/theme.scss';
+
+.Navigation {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  &Link {
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    color: var(--color-dark);
+    transition: all 0.2s ease;
+    &:hover {
+      background: $color-gradient;
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      color: transparent;
+    }
+
+    &Active {
+      background: $color-gradient;
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      color: transparent;
+    }
+  }
+
+  @media (max-width: $breakpoint-tablet) {
+    display: none;
+  }
+}

@@ -1,0 +1,1 @@
+export {HeroSectionSocialLink} from './HeroSectionSocialLink';
