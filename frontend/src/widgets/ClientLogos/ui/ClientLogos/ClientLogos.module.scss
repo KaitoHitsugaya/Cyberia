@@ -1,9 +1,52 @@
-
-.ClientLogos{
+.ClientLogos {
   margin-top: 20px;
   display: flex;
   gap: 68px;
   align-items: center;
   flex-wrap: nowrap;
   overflow: hidden;
+
+  &Track {
+    display: flex;
+    gap: 68px;
+    align-items: center;
+    width: max-content;
+    animation: scrollLogos 30s linear infinite;
+
+    &:hover {
+      animation-play-state: paused;
+    }
+  }
+
+  &Item {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.6;
+    transition: opacity 0.3s ease;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+  &Image {
+    object-fit: contain;
+    filter: grayscale(100%);
+    transition: filter 0.3s ease;
+
+    &:hover {
+      filter: grayscale(0%);
+    }
+  }
+}
+
+
+@keyframes scrollLogos {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-50% - 34px));
+  }
 }

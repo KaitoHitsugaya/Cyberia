@@ -1,4 +1,4 @@
-export const NAVIGATION_LINKS = [
+export const PAGES = [
     { label: 'Проекты', href: '/projects' },
     { label: 'Услуги', href: '/services' },
     { label: 'О компании', href: '/about' },

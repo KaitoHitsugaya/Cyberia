@@ -1,11 +1,13 @@
 .HomeView{
-  max-width: 1325px;
   margin: 0 auto;
-  padding-top: 20px;
   display: flex;
   flex-direction: column;
-  gap: 120px;
+  justify-content: center;
+  align-items: center;
+  & > *:nth-child(n + 3) {
+    margin-top: 120px;
+  }
   &Block{
-
+    max-width: 1325px;
   }
 }

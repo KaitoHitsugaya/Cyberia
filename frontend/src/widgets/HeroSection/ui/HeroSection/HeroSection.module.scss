@@ -6,7 +6,6 @@
   width: 100%;
   position: relative;
   overflow: hidden;
-  margin-top: 40px;
   &Background{
     position: absolute;
     inset: 0;
@@ -64,7 +63,7 @@
           font-size: 24px;
           text-align: center;
           color: #fff;
-          font-family: var(--font-heading);
+          font-family: $font-heading;
         }
         &Text{
           color: #fff;
@@ -75,7 +74,7 @@
       &Title{
         font-size: 32px;
         color: $color-white;
-        font-family: var(--font-heading);
+        font-family: $font-heading;
       }
       &Content{
       }

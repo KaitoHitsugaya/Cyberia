@@ -1,0 +1,66 @@
+@import '@/shared/config/theme.scss';
+
+.FilterTabs {
+  display: flex;
+  flex-wrap: nowrap;
+  width: 100%;
+  gap: 12px;
+  margin: 20px 0 48px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+  cursor: grab;
+  user-select: none;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+
+  &Tab {
+    padding: 10px 24px;
+    border-radius: 32px;
+    border: none;
+    background-color: $color-inActive;
+    font-size: 16px;
+    font-weight: 600;
+    color: $color-dark;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    flex-shrink: 0;
+
+    &:hover {
+      background-color: $color-inActiveIcon;
+    }
+
+    &Active {
+      background: $color-gradient;
+      color: $color-white;
+    }
+
+    &Close {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 23px;
+      height: 24px;
+      transition: background-color 0.2s ease;
+
+      svg {
+        width: 23px;
+        height: 24px;
+      }
+    }
+  }
+
+  @media (max-width: $breakpoint-mobile) {
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    padding-bottom: 8px;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+}

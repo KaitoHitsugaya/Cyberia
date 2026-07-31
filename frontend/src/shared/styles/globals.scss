@@ -1,9 +1,9 @@
-@import '@/shared/config/theme.scss';
+@import '@/shared/config/theme';
 @import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;700&family=Wix+Madefor+Text:wght@400;500;600;700&display=swap');
 
 :root {
-  --font-heading: #{$font-heading};
-  --font-body: #{$font-body};
+  --font-heading: var(--font-unbounded, 'Unbounded', sans-serif);
+  --font-body: var(--font-wix, 'Wix Madefor Text', sans-serif);
   --color-primary: #{$color-primary};
   --color-dark: #{$color-dark};
 }
@@ -16,13 +16,13 @@
 //asd
 html, body {
   height: 100%;
-  font-family: var(--font-body);
+  font-family: $font-body;
   color: var(--color-text);
   background-color: var(--color-bg);
   -webkit-font-smoothing: antialiased;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-heading);
+  font-family: $font-heading;
   font-weight: 600;
 }

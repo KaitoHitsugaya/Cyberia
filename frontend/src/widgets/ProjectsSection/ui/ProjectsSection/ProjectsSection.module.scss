@@ -1,0 +1,36 @@
+.ProjectsSection{
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  &Title{
+    color: $color-dark;
+    font-size: 52px;
+    font-family: $font-heading;
+    font-weight: 600;
+  }
+  &Container{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+  &Grid {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    width: 100%;
+  }
+  &Column, &ColumnRight{
+    display: flex;
+    flex-direction: column;
+    gap: 62px;
+    flex: 1;
+  }
+  &ColumnRight{
+    margin-top: 190px;
+  }
+  &LoadMore{
+    margin-top: 70px;
+  }
+}

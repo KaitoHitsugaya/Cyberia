@@ -30,8 +30,8 @@ $fontSize-mobile-h7: 12px;
 $fontSize-mobile-h8: 8px;
 
 
-$font-heading: 'Unbounded', sans-serif;
-$font-body: 'Wix Madefor Text', sans-serif;
+$font-heading: var(--font-heading, 'Unbounded', sans-serif);
+$font-body: var(--font-body, 'Wix Madefor Text', sans-serif);
 
 $breakpoint-mobile: 768px;
 $breakpoint-tablet: 1024px;

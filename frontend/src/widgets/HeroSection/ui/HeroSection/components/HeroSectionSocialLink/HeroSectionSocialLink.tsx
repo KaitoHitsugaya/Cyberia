@@ -15,7 +15,7 @@ export const HeroSectionSocialLink = () => (
             const Icon = iconMap[social.icon];
             return (
                 <Link key={social.label} href={social.href} className={S.SocialsLink} aria-label={social.label} target="_blank">
-                    <Icon />
+                    <Icon isWhite={true} />
                 </Link>
             );
         })}

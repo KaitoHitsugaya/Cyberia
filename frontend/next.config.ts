@@ -1,7 +1,14 @@
-import type { NextConfig } from "next";
+import fs from 'fs';
+import path from 'path';
 
-const nextConfig: NextConfig = {
-  /* config options here */
+const variablesPath = path.join(__dirname, 'src/shared/config/theme.scss');
+const additionalData = fs.readFileSync(variablesPath, 'utf8');
+
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+    sassOptions: {
+        additionalData,
+    },
 };
 
-export default nextConfig;
+module.exports = nextConfig;

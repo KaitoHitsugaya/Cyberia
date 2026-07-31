@@ -1,3 +1,4 @@
+import { clsx } from 'clsx';
 import S from './Button.module.scss';
 //Говно, в первом блоке педдинги не такие, как в ui kit
 export interface ButtonProps {
@@ -12,7 +13,14 @@ export interface ButtonProps {
 
 export const Button = ({children, variant = 'primary', disabled = false, onClick, className = '', as = 'button', href,
                        }: ButtonProps) => {
-    const baseClass = `${S.Button} ${S[`Button${variant.charAt(0).toUpperCase() + variant.slice(1)}`]} ${disabled ? S.ButtonDisabled : ''} ${className}`;
+    const baseClass = clsx(
+        S.Button,
+        S[`Button${variant.charAt(0).toUpperCase() + variant.slice(1)}`],
+        {
+            [S.ButtonDisabled]: disabled,
+        },
+        className
+    );
 
     if (as === 'a' && href) {
         return (
