@@ -6,6 +6,7 @@ import S from "./HomeView.module.scss"
 import {ClientLogos} from "@/widgets/ClientLogos";
 import {AwardsSection} from "@/widgets/AwardsSection";
 import {ProjectsSection} from "@/widgets/ProjectsSection";
+import {OurTeam} from "@/widgets/OurTeam";
 
 export const HomeView = () => {
     return (
@@ -20,6 +21,9 @@ export const HomeView = () => {
             </main>
             <section className={S.HomeViewBlock}>
                 <ProjectsSection/>
+            </section>
+            <section className={S.HomeViewBlock}>
+                <OurTeam/>
             </section>
         </div>
     );

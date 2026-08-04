@@ -1,0 +1,45 @@
+.OurTeam {
+    background: #2D41F9;
+    border-radius: 32px;
+    padding: 120px 70px 60px;
+    display: flex;
+    width: 100%;
+
+    &Container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
+        align-items: center;
+    }
+
+    &Content {
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+    }
+
+    &Title {
+        font-family: $font-heading;
+        font-size: 48px;
+        font-weight: 600;
+        color: $color-white;
+    }
+
+    &Description {
+        font-family: $font-body;
+        font-size: 16px;
+        color: $color-white;
+        line-height: 1.6;
+        max-width: 400px;
+    }
+
+    &Button {
+        align-self: flex-start;
+    }
+
+    &Stats {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px 32px;
+    }
+}

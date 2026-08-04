@@ -1,0 +1,1 @@
+export { TeamPhotoCollage } from './TeamPhotoCollage';

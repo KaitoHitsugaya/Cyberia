@@ -29,3 +29,10 @@ export { default as HandSilverImage } from './HandSilverImage.png';
 export { default as ScissorsImage } from './ScissorsImage.png';
 export { default as AwardImage } from './AwardImage.png';
 
+
+
+export { default as TeamBottomImage } from './TeamBottomImage.png';
+export { default as TeamMainImage } from './TeamMainImage.png';
+export { default as TeamTopImage } from './TeamTopImage.png';
+export { default as OutTeamFire } from './OutTeamFire.png';
+export { default as OutTeamSmile } from './OutTeamSmile.png';

@@ -1,0 +1,32 @@
+.TeamStat {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  &Value {
+    font-family: $font-heading;
+    &Purple {
+      background: linear-gradient(to bottom, #8B61E5 0%, #6720FF 100%);
+    }
+    &Blue {
+      background: linear-gradient(160deg, #6CA7FF 0%, #2D41F9 100%);
+    }
+    font-size: 72px;
+    font-weight: 700;
+    line-height: 1;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+
+  }
+
+
+  &Label {
+    font-family: $font-body;
+    font-size: $fontSize-desktop-h9;
+    color: $color-white;
+    line-height: 1.4;
+    max-width: 180px;
+  }
+}
