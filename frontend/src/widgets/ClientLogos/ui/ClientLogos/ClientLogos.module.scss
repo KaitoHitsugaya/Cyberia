@@ -1,11 +1,11 @@
 .ClientLogos {
-  margin-top: 20px;
   display: flex;
   gap: 68px;
   align-items: center;
   flex-wrap: nowrap;
   overflow: hidden;
-
+  max-width: 1325px;
+  margin: 20px auto 0;
   &Track {
     display: flex;
     gap: 68px;

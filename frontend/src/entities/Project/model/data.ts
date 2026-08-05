@@ -1,4 +1,4 @@
-import type { Project } from './types';
+import type { Project } from './Project';
 import {HandGoldImage} from "@/shared/assets/images";
 import {
     ForkargoProjectImage,

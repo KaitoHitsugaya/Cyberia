@@ -1,9 +1,10 @@
 'use client';
 
-import { PROJECT_CATEGORIES, type ProjectCategory } from '@/entities/Project/model/types';
+import { PROJECT_CATEGORIES, type ProjectCategory } from '@/entities/Project/model/Project';
 import { CloseIcon } from '@/shared/assets/icons/CloseIcon';
 import S from './FilterTabs.module.scss';
 import {useDragScroll} from "@/shared/lib/useDragScroll";
+import {clsx} from "clsx";
 
 interface FilterTabsProps {
     selectedCategories: readonly ProjectCategory[];
@@ -21,7 +22,14 @@ export const FilterTabs = ({selectedCategories, onCategoryToggle, onCategoryRemo
             onCategoryToggle(category);
         }
     }
+    const handleTabClick = (category: ProjectCategory, active: boolean) => {
+        actionButton(active, category);
+    };
 
+    const handleCloseClick = (e: React.MouseEvent, category: ProjectCategory, active: boolean) => {
+        e.stopPropagation();
+        actionButton(active, category);
+    };
     return (
         <div className={S.FilterTabs} ref={scrollRef}>
             {Object.entries(PROJECT_CATEGORIES).map(([key, label]) => {
@@ -29,13 +37,10 @@ export const FilterTabs = ({selectedCategories, onCategoryToggle, onCategoryRemo
                 const active = isActive(category);
 
                 return (
-                    <button key={key} type="button" className={`${S.FilterTabsTab} ${active ? S.FilterTabsTabActive : ''}`} onMouseDown={(e) => e.preventDefault()} onClick={() => actionButton(active, category)}>
+                    <button key={key} type="button" className={clsx(S.FilterTabsTab, {[S.FilterTabsTabActive]: active,})} onMouseDown={(e) => e.preventDefault()} onClick={() => handleTabClick(category, active)}>
                         <span>{label}</span>
                         {active && (
-                            <span className={S.FilterTabsTabClose} onClick={(e) => {
-                                    e.stopPropagation();
-                                    actionButton(active, category);
-                                }}>
+                            <span className={S.FilterTabsTabClose} onClick={(e) => {handleCloseClick(e, category, active)}}>
                                 <CloseIcon />
                             </span>
                         )}

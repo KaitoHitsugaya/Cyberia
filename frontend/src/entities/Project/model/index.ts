@@ -1,2 +1,2 @@
-export type { Project, ProjectCategory } from './types';
+export type { Project, ProjectCategory } from './Project';
 export { PROJECTS_DATA } from './data';

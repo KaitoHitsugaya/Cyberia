@@ -1,0 +1,73 @@
+.ReviewsSection {
+  overflow: hidden;
+  max-width: 1325px;
+  &Container{
+  }
+  &Title {
+    font-family: $font-heading;
+    font-size: 48px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 48px;
+    color: $color-dark;
+  }
+  &Carousel {
+    position: relative;
+    overflow: hidden;
+  }
+  &Track {
+    display: flex;
+    gap: 20px;
+  }
+  &Controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    margin-top: 40px;
+  }
+  &Button {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-color: $color-inActive;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: none;
+    &:hover {
+      background-color: $color-inActiveIcon;
+    }
+    &:disabled {
+      opacity: 0.3;
+      cursor: not-allowed;
+    }
+  }
+  &Dots {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+  }
+  &Dot {
+    border-radius: 50%;
+    background-color: $color-inActiveIcon;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 0;
+    width: 6px;
+    height: 6px;
+    &Neighbor {
+      width: 8px;
+      height: 8px;
+    }
+    &Active {
+      width: 12px;
+      height: 12px;
+      background-color: $color-primary;
+      border-radius: 50%;
+    }
+  }
+}

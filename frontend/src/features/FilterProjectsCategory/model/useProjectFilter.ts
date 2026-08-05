@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useMemo } from 'react';
-import type { Project, ProjectCategory } from '@/entities/Project/model/types';
+import type { Project, ProjectCategory } from '@/entities/Project/model/Project';
 
 interface UseProjectFilterReturn {
     selectedCategories: readonly ProjectCategory[];

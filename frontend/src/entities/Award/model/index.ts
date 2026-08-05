@@ -1,2 +1,2 @@
-export type { Award } from './types';
+export type { Award } from './Award';
 export { AWARDS_DATA } from './data';

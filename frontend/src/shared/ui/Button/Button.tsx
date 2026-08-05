@@ -1,6 +1,5 @@
 import { clsx } from 'clsx';
 import S from './Button.module.scss';
-//Говно, в первом блоке педдинги не такие, как в ui kit
 export interface ButtonProps {
     children: React.ReactNode;
     variant?: 'primary' | 'dark' | 'outline';

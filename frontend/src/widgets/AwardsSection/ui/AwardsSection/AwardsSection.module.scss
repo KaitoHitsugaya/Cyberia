@@ -1,11 +1,7 @@
-@import '@/shared/config/theme.scss';
-
 .AwardsSection {
-
   &Container {
     margin: 0 auto;
   }
-
   &Title {
     font-family: $font-heading;
     font-size: 48px;
@@ -14,7 +10,6 @@
     margin-bottom: 48px;
     color: var(--color-text);
   }
-
   &Grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);

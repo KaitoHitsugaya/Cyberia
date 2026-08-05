@@ -1,4 +1,4 @@
-import type { Award } from '../../model/types';
+import type { Award } from '../../model/Award';
 import { HandBrownImage, HandGoldImage, HandSilverImage, ScissorsImage, AwardImage } from '@/shared/assets/images';
 import { ArrowLink } from "@/shared/assets/icons";
 import S from './AwardCard.module.scss';

@@ -1,13 +1,15 @@
 "use client"
 import React, {useMemo, useState} from 'react';
-import {ProjectCategory, PROJECTS_DATA} from "@/entities/Project/model";
+import {Project, ProjectCategory, PROJECTS_DATA} from "@/entities/Project/model";
 import {ProjectCard} from "@/entities/Project";
 import {Button} from "@/shared/ui/Button";
 import S from './ProjectsSection.module.scss'
 import {FilterTabs} from "@/features/FilterProjectsCategory/ui";
 import {useProjectFilter} from "@/features/FilterProjectsCategory/model/useProjectFilter";
+import {isEven, isOdd} from "@/shared/lib/math";
 
 const INITIAL_PROJECTS_COUNT = 4;
+const LOAD_MORE_STEP = 4;
 
 export const ProjectsSection = () => {
     const {
@@ -22,18 +24,22 @@ export const ProjectsSection = () => {
     const visibleProjects = filteredProjects.slice(0, visibleCount);
     const hasMore = visibleCount < filteredProjects.length;
 
-    const leftColumn = useMemo(
-        () => visibleProjects.filter((_, index) => index % 2 === 0),
-        [visibleProjects]
-    );
-
-    const rightColumn = useMemo(
-        () => visibleProjects.filter((_, index) => index % 2 === 1),
-        [visibleProjects]
-    );
+    const { leftColumn, rightColumn } = useMemo(() => {
+        return visibleProjects.reduce(
+            (acc, project, index) => {
+                if (isEven(index)) {
+                    acc.leftColumn.push(project);
+                } else {
+                    acc.rightColumn.push(project);
+                }
+                return acc;
+            },
+            { leftColumn: [] as Project[], rightColumn: [] as Project[] }
+        );
+    }, [visibleProjects]);
 
     const handleLoadMore = () => {
-        setVisibleCount((prev) => prev + 4);
+        setVisibleCount((prev) => prev + LOAD_MORE_STEP);
     };
 
     const handleCategoryToggleWithReset = (category: ProjectCategory) => {
