@@ -1,10 +1,7 @@
 .ClientLogos {
-  display: flex;
-  gap: 68px;
-  align-items: center;
-  flex-wrap: nowrap;
   overflow: hidden;
   max-width: 1325px;
+  width: 100%;
   margin: 20px auto 0;
   &Track {
     display: flex;
@@ -12,7 +9,6 @@
     align-items: center;
     width: max-content;
     animation: scrollLogos 30s linear infinite;
-
     &:hover {
       animation-play-state: paused;
     }
@@ -25,12 +21,15 @@
     justify-content: center;
     opacity: 0.6;
     transition: opacity 0.3s ease;
+    width: 120px;
 
     &:hover {
       opacity: 1;
     }
   }
   &Image {
+    width: 100%;
+    height: auto;
     object-fit: contain;
     filter: grayscale(100%);
     transition: filter 0.3s ease;

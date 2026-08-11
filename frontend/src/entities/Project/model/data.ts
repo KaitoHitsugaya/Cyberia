@@ -8,7 +8,7 @@ import {
     CalculatorProjectImage,
 } from '@/shared/assets/images';
 
-export const PROJECTS_DATA: readonly Project[] = [
+export const PROJECTS_DATA: Project[] = [
     {
         id: '1',
         title: 'Форкагро',

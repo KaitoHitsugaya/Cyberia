@@ -1,8 +1,4 @@
-export interface TeamStat {
-    id: string;
-    value: string;
-    label: string;
-}
+import {TeamStat} from "@/entities/TeamStat/modal/teamStats";
 
 export const TEAM_STATS: readonly TeamStat[] = [
     {

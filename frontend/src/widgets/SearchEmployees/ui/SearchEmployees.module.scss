@@ -1,0 +1,72 @@
+.SearchEmployees{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  color: #fff;
+  background: $color-dark;
+  border-radius: 24px;
+  max-height: 900px;
+  height: 900px;
+  position: relative;
+  overflow: hidden;
+  max-width: 1325px;
+  &Background{
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  &Container{
+    padding-top: 48px;
+    max-width: 780px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    align-items: end;
+    gap: 24px;
+    &BlockCard{
+      position: absolute;
+      z-index: 1;
+      top: 0;
+      left: -2%;
+      display: flex;
+      align-items: start;
+      gap: 40px;
+      & img{
+        width: 358px;
+        height: auto;
+        object-fit: cover;
+      }
+    }
+    &Block{
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      &:last-child{
+        width: 400px;
+      }
+      &Title{
+        font-size: 48px;
+        font-family: $font-heading;
+        font-weight: 600;
+      }
+      &Description{
+        font-size: 16px;
+        font-weight: 800;
+      }
+      &Row{
+        display: flex;
+        gap: 12px;
+        align-items: center;
+        &Link{
+          color: #fff;
+          font-size: 16px;
+          font-weight: 600;
+          text-decoration: none;
+          border-bottom: 1px $color-primary solid;
+          padding-bottom: 4px;
+        }
+      }
+    }
+  }
+}

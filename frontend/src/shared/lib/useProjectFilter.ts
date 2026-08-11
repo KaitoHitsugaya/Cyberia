@@ -11,8 +11,8 @@ interface UseProjectFilterReturn {
     handleClearAll: () => void;
 }
 
-export const useProjectFilter = (projects: readonly Project[]): UseProjectFilterReturn => {
-    const [selectedCategories, setSelectedCategories] = useState<readonly ProjectCategory[]>([]);
+export const useProjectFilter = (projects: Project[]): UseProjectFilterReturn => {
+    const [selectedCategories, setSelectedCategories] = useState<ProjectCategory[]>([]);
 
     const filteredProjects = useMemo(() => {
         if (selectedCategories.length === 0) {

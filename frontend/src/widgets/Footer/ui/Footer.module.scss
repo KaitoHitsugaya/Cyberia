@@ -1,0 +1,53 @@
+.Footer {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  max-width: 1325px;
+  margin: 120px auto 0;
+  width: 100%;
+  padding: 0 24px;
+  &Items{
+    max-width: 500px;
+    height: auto;
+    object-fit: contain;
+    margin-top: 20px;
+  }
+  &Row {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 0 40px;
+
+    &Col {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      font-size: 16px;
+
+      &SubCol {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-weight: 500;
+
+        &Title {
+          font-size: 24px;
+        }
+      }
+
+      &Link {
+        text-decoration: none;
+        color: $color-dark;
+        cursor: pointer;
+        font-size: 16px;
+        font-weight: 500;
+        width: fit-content;
+      }
+
+      img {
+        max-width: 100%;
+        height: auto;
+        object-fit: contain;
+      }
+    }
+  }
+}

@@ -5,7 +5,7 @@ import {ProjectCard} from "@/entities/Project";
 import {Button} from "@/shared/ui/Button";
 import S from './ProjectsSection.module.scss'
 import {FilterTabs} from "@/features/FilterProjectsCategory/ui";
-import {useProjectFilter} from "@/features/FilterProjectsCategory/model/useProjectFilter";
+import {useProjectFilter} from "@/shared/lib/useProjectFilter";
 import {isEven, isOdd} from "@/shared/lib/math";
 
 const INITIAL_PROJECTS_COUNT = 4;

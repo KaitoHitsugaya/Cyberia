@@ -1,12 +1,16 @@
 import { Button } from '@/shared/ui/Button';
-import { TEAM_STATS } from '@/shared/config/teamStats';
-import { TeamStat } from './components/TeamStat';
 import { TeamPhotoCollage } from './components/TeamPhotoCollage';
 import S from './OurTeam.module.scss';
+import {TEAM_STATS} from "@/entities/TeamStat/modal";
+import {TeamStat} from "@/entities/TeamStat";
+import {OurTeamBackground} from "@/shared/assets/icons/OurTeamBackground";
 
 export const OurTeam = () => {
     return (
         <section className={S.OurTeam}>
+            <div className={S.OurTeamBackground}>
+                <OurTeamBackground/>
+            </div>
             <div className={S.OurTeamContainer}>
                 <div className={S.OurTeamContent}>
                     <h2 className={S.OurTeamTitle}>Наша команда</h2>
@@ -25,7 +29,7 @@ export const OurTeam = () => {
 
                     <div className={S.OurTeamStats}>
                         {TEAM_STATS.map((stat, index) => (
-                            <TeamStat key={stat.id} stat={stat} index={index} />
+                            <TeamStat key={stat.id} stat={stat} isBlue={index === 1 || index === 2} />
                         ))}
                     </div>
                 </div>

@@ -1,0 +1,59 @@
+.FeedbackSection{
+  background: linear-gradient(to right, #70D0FF 0%, #2D41F9 100%);
+  border-radius: 24px;
+  width: 100%;
+  display: flex;
+  gap: 72px;
+  justify-content: center;
+  align-items: center;
+  padding-top: 24px;
+  position: relative;
+  overflow: hidden;
+  max-width: 1325px;
+  &Background{
+    position: absolute;
+    top: 0;
+    left: 7%;
+    z-index: 1;
+  }
+  &Block{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    color: #fff;
+    z-index: 2;
+
+    & img{
+      width: 430px;
+      height: auto;
+      object-fit: cover;
+    }
+    &Title{
+      font-family: $font-heading;
+      font-size: 40px;
+      font-weight: 600;
+    }
+    &Description{
+      font-size: 16px;
+      max-width: 380px;
+    }
+    &LinkBlock{
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      position: relative;
+      & img{
+        position: absolute;
+        bottom: -100%;
+        left: 10%;
+        width: 105px;
+        height: auto;
+      }
+      &Text{
+        display: flex;
+        gap: 8px;
+        font-size: 16px;
+      }
+    }
+  }
+}

@@ -2,9 +2,8 @@ import type { Metadata } from "next";
 import {Inter, Unbounded, Wix_Madefor_Text} from "next/font/google";
 import "@/shared/styles/globals.scss";
 import {Header} from "@/widgets/Header";
-import {HeroSection} from "@/widgets/HeroSection";
-import {ClientLogos} from "@/widgets/ClientLogos";
 import React from "react";
+import {Footer} from "@/widgets/Footer";
 
 const inter = Inter({
   subsets: ["cyrillic", "latin"],
@@ -38,14 +37,11 @@ export default function RootLayout({
   return (
       <html lang="ru" className={inter.variable}>
       <body>
-          <header>
-              <Header/>
-              <HeroSection/>
-              <ClientLogos/>
-          </header>
+          <Header/>
           <main>
               {children}
           </main>
+          <Footer/>
       </body>
       </html>
   );

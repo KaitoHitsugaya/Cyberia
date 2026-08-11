@@ -23,7 +23,7 @@ export const Header = () => {
         };
     }, []);
     return (
-        <div className={clsx(S.Header, { [S.HeaderScrolled]: isScrolled })}>
+        <header className={clsx(S.Header, { [S.HeaderScrolled]: isScrolled })}>
             <div className={S.HeaderContainer}>
                 <div className={S.HeaderContainerNav}>
                     <div className={S.HeaderContainerNavBlock}>
@@ -37,6 +37,6 @@ export const Header = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        </header>
     );
 };

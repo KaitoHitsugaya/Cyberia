@@ -1,5 +1,6 @@
 import { clsx } from 'clsx';
 import S from './Button.module.scss';
+import {capitalize} from "@/shared/lib/string";
 export interface ButtonProps {
     children: React.ReactNode;
     variant?: 'primary' | 'dark' | 'outline';
@@ -14,7 +15,7 @@ export const Button = ({children, variant = 'primary', disabled = false, onClick
                        }: ButtonProps) => {
     const baseClass = clsx(
         S.Button,
-        S[`Button${variant.charAt(0).toUpperCase() + variant.slice(1)}`],
+        S[`Button${capitalize(variant)}`],
         {
             [S.ButtonDisabled]: disabled,
         },
