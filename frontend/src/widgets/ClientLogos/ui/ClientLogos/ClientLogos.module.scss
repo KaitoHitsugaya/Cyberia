@@ -3,12 +3,14 @@
   max-width: 1325px;
   width: 100%;
   margin: 20px auto 0;
+  position: relative;
   &Track {
     display: flex;
     gap: 68px;
     align-items: center;
     width: max-content;
     animation: scrollLogos 30s linear infinite;
+    will-change: transform;
     &:hover {
       animation-play-state: paused;
     }

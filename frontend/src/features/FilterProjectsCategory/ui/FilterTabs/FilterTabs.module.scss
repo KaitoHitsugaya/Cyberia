@@ -13,7 +13,7 @@
   -ms-overflow-style: none;
 
   &Tab {
-    padding: 10px 24px;
+    padding: 10px 40px;
     border-radius: 32px;
     border: none;
     background-color: $color-inActive;
@@ -26,6 +26,7 @@
     align-items: center;
     gap: 7px;
     flex-shrink: 0;
+    position: relative;
 
     &:hover {
       background-color: $color-inActiveIcon;
@@ -37,12 +38,14 @@
     }
 
     &Close {
+      position: absolute;
       display: inline-flex;
       align-items: center;
       justify-content: center;
       width: 23px;
       height: 24px;
       transition: background-color 0.2s ease;
+      right: 12px;
 
       svg {
         width: 23px;

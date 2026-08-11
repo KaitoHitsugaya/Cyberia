@@ -1,4 +1,5 @@
 .HomeView{
+  width: 100%;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -6,6 +7,7 @@
   align-items: center;
   gap: 120px;
   &NoGap{
+    width: 100%;
   }
 }
 
