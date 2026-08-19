@@ -1,15 +1,15 @@
-.ProjectsSection{
+.ProjectsSection {
   display: flex;
   width: 100%;
   justify-content: center;
   max-width: 1325px;
-  &Title{
+  &Title {
     color: $color-dark;
     font-size: 52px;
     font-family: $font-heading;
     font-weight: 600;
   }
-  &Container{
+  &Container {
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -22,16 +22,26 @@
     gap: 20px;
     width: 100%;
   }
-  &Column, &ColumnRight{
+  &GridNormal {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px 62px;
+    width: 100%;
+  }
+  &Column {
     display: flex;
     flex-direction: column;
     gap: 62px;
     flex: 1;
   }
-  &ColumnRight{
+  &ColumnRight {
+    display: flex;
+    flex-direction: column;
+    gap: 62px;
+    flex: 1;
     margin-top: 190px;
   }
-  &LoadMore{
+  &LoadMore {
     margin-top: 70px;
   }
 }

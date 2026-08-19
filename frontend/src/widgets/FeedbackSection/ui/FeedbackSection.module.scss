@@ -1,7 +1,6 @@
 .FeedbackSection{
   background: linear-gradient(to right, #70D0FF 0%, #2D41F9 100%);
   border-radius: 24px;
-  width: 100%;
   display: flex;
   gap: 72px;
   justify-content: center;
@@ -9,7 +8,6 @@
   padding-top: 24px;
   position: relative;
   overflow: hidden;
-  max-width: 1325px;
   &Background{
     position: absolute;
     top: 0;

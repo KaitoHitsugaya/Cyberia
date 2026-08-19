@@ -12,15 +12,23 @@
   margin: 0;
   padding: 0;
 }
-//asd
-html, body {
+html {
   min-height: 100%;
+}
+html, body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
   font-family: $font-body;
   color: var(--color-text);
   background-color: var(--color-bg);
   -webkit-font-smoothing: antialiased;
 }
-
+.container {
+  max-width: 1325px;
+  width: 100%;
+  box-sizing: border-box;
+}
 h1, h2, h3, h4, h5, h6 {
   font-family: $font-heading;
   font-weight: 600;

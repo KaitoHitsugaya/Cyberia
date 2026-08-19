@@ -4,13 +4,8 @@ import Image from "next/image";
 import Logo from '@/shared/assets/images/LogoImage.png'
 import {PAGES, SOCIAL_LINKS} from "@/shared/config/navigation";
 import Link from "next/link";
-import {MaxIcon, TelegramIcon, VkIcon} from "@/shared/assets/icons";
-const iconMap = {
-    telegram: TelegramIcon,
-    max: MaxIcon,
-    vk: VkIcon,
-} as const;
-import itemsFooter from '@/shared/assets/images/ItemsFooter.png'
+import {clsx} from "clsx";
+import { iconMap } from "@/shared/lib/iconMap";
 
 export const Footer = () => {
     return (
@@ -33,10 +28,10 @@ export const Footer = () => {
                     })}
                 </div>
                 <div className={S.FooterRowCol}>
-                    <div className={`${S.FooterRowColSubCol} ${S.FooterRowColSubColTitle}`}>
+                    <div className={clsx(S.FooterRowColSubCol, S.FooterRowColSubColTitle)}>
                         +7 960 959 18 66
                     </div>
-                    <div className={`${S.FooterRowColSubCol} ${S.FooterRowColSubColTitle}`}>
+                    <div className={clsx(S.FooterRowColSubCol, S.FooterRowColSubColTitle)}>
                         hello@cyberia.studio
                     </div>
                     <div className={S.FooterRowColSubCol}>
@@ -64,9 +59,6 @@ export const Footer = () => {
                 <div className={S.FooterRowCol}>
                     Политика конфиденциальности
                 </div>
-            </div>
-            <div className={S.FooterRow}>
-                <Image className={S.FooterItems} src={itemsFooter} alt={''}/>
             </div>
         </footer>
     );

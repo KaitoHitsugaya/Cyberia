@@ -8,15 +8,16 @@ interface TeamStatProps {
 }
 
 export const TeamStat = ({ stat, isBlue }: TeamStatProps) => {
+    const valueClassName = clsx(
+        S.TeamStatValue,
+        {
+            [S.TeamStatValueBlue]: !isBlue,
+            [S.TeamStatValuePurple]: isBlue,
+        }
+    );
     return (
         <div className={S.TeamStat}>
-            <div className={clsx(
-                S.TeamStatValue,
-                {
-                    [S.TeamStatValueBlue]: !isBlue,
-                    [S.TeamStatValuePurple]: isBlue,
-                }
-            )}>{stat.value}</div>
+            <div className={valueClassName}>{stat.value}</div>
             <div className={S.TeamStatLabel}>{stat.label}</div>
         </div>
     );

@@ -7,9 +7,9 @@ export const TelegramIcon = ({ isWhite = false }: IconProps) => {
 
     return (
         <svg
-            width="32"
-            height="32"
-            viewBox="0 0 32 32"
+            width="35"
+            height="35"
+            viewBox="0 0 35 35"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
         >

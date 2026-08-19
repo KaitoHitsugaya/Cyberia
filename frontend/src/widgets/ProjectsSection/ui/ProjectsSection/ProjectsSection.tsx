@@ -1,17 +1,21 @@
 "use client"
-import React, {useMemo, useState} from 'react';
-import {Project, ProjectCategory, PROJECTS_DATA} from "@/entities/Project/model";
-import {ProjectCard} from "@/entities/Project";
-import {Button} from "@/shared/ui/Button";
+import React, { useState, useMemo } from 'react';
+import { Project, ProjectCategory, PROJECTS_DATA } from "@/entities/Project/model";
+import { ProjectCard } from "@/entities/Project";
+import { Button } from "@/shared/ui/Button";
 import S from './ProjectsSection.module.scss'
-import {FilterTabs} from "@/features/FilterProjectsCategory/ui";
-import {useProjectFilter} from "@/shared/lib/useProjectFilter";
-import {isEven, isOdd} from "@/shared/lib/math";
+import { FilterTabs } from "@/features/FilterProjectsCategory/ui";
+import { useProjectFilter } from "@/features/FilterProjectsCategory/model/useProjectFilter";
+import { isEven, isOdd } from "@/shared/lib/math";
 
 const INITIAL_PROJECTS_COUNT = 4;
 const LOAD_MORE_STEP = 4;
 
-export const ProjectsSection = () => {
+export interface ProjectsSectionProps {
+    isColumnRight?: boolean;
+}
+
+export const ProjectsSection = ({ isColumnRight }: ProjectsSectionProps) => {
     const {
         selectedCategories,
         filteredProjects,
@@ -25,6 +29,10 @@ export const ProjectsSection = () => {
     const hasMore = visibleCount < filteredProjects.length;
 
     const { leftColumn, rightColumn } = useMemo(() => {
+        if (!isColumnRight) {
+            return { leftColumn: [], rightColumn: [] };
+        }
+
         return visibleProjects.reduce(
             (acc, project, index) => {
                 if (isEven(index)) {
@@ -36,7 +44,7 @@ export const ProjectsSection = () => {
             },
             { leftColumn: [] as Project[], rightColumn: [] as Project[] }
         );
-    }, [visibleProjects]);
+    }, [visibleProjects, isColumnRight]);
 
     const handleLoadMore = () => {
         setVisibleCount((prev) => prev + LOAD_MORE_STEP);
@@ -52,8 +60,6 @@ export const ProjectsSection = () => {
         setVisibleCount(INITIAL_PROJECTS_COUNT);
     };
 
-
-
     return (
         <section className={S.ProjectsSection}>
             <div className={S.ProjectsSectionContainer}>
@@ -65,19 +71,27 @@ export const ProjectsSection = () => {
                     onCategoryRemove={handleCategoryRemoveWithReset}
                 />
 
-                <div className={S.ProjectsSectionGrid}>
-                    <div className={S.ProjectsSectionColumn}>
-                        {leftColumn.map((project) => (
-                            <ProjectCard key={project.id} project={project} />
-                        ))}
-                    </div>
+                {isColumnRight ? (
+                    <div className={S.ProjectsSectionGrid}>
+                        <div className={S.ProjectsSectionColumn}>
+                            {leftColumn.map((project) => (
+                                <ProjectCard key={project.id} project={project} />
+                            ))}
+                        </div>
 
-                    <div className={S.ProjectsSectionColumnRight}>
-                        {rightColumn.map((project) => (
+                        <div className={S.ProjectsSectionColumnRight}>
+                            {rightColumn.map((project) => (
+                                <ProjectCard key={project.id} project={project} />
+                            ))}
+                        </div>
+                    </div>
+                ) : (
+                    <div className={S.ProjectsSectionGridNormal}>
+                        {visibleProjects.map((project) => (
                             <ProjectCard key={project.id} project={project} />
                         ))}
                     </div>
-                </div>
+                )}
 
                 {hasMore && (
                     <div className={S.ProjectsSectionLoadMore}>
@@ -90,4 +104,3 @@ export const ProjectsSection = () => {
         </section>
     );
 };
-

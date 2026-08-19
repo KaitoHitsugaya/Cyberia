@@ -16,18 +16,18 @@
   }
 
   &Primary {
-    background: var(--color-primary);
-    color: var(--color-white);
+    background: $color-primary;
+    color: $color-white;
   }
 
   &Dark {
-    background: var(--color-dark);
+    background: $color-dark;
     color: $color-white;
   }
 
   &Outline {
     background-color: transparent;
-    color: var(--color-dark);
+    color: $color-dark;
     border: 1px solid var(--color-primary);
 
     &:hover {

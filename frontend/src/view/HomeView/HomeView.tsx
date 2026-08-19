@@ -17,9 +17,8 @@ export const HomeView = () => {
                 <HeroSection/>
                 <ClientLogos/>
             </div>
-
             <AwardsSection/>
-            <ProjectsSection/>
+            <ProjectsSection isColumnRight/>
             <OurTeam/>
             <ReviewsSection/>
             <FeedbackSection/>

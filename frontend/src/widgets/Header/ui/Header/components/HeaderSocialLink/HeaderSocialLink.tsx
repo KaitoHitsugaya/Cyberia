@@ -1,13 +1,7 @@
 import { SOCIAL_LINKS } from '@/shared/config/navigation';
-import { TelegramIcon, MaxIcon, VkIcon } from '@/shared/assets/icons';
 import S from './HeaderSocialLink.module.scss';
 import Link from "next/link";
-
-const iconMap = {
-    telegram: TelegramIcon,
-    max: MaxIcon,
-    vk: VkIcon,
-} as const;
+import { iconMap } from "@/shared/lib/iconMap";
 
 export interface HeaderSocialLinkProps{
     isWhite?: boolean;

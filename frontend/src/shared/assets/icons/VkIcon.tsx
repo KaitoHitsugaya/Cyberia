@@ -5,7 +5,7 @@ interface IconProps {
 export const VkIcon = ({isWhite = false} : IconProps) => {
     const color = isWhite ? '#FFFFFF' : '#0B0D20';
     return(
-        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg width="35" height="35" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg">
             <circle cx="16" cy="16" r="15.5" stroke={color}/>
             <g clipPath="url(#clip0_214_26500)">
                 <path fillRule="evenodd" clipRule="evenodd"

@@ -38,7 +38,7 @@ export default function RootLayout({
       <html lang="ru" className={inter.variable}>
       <body>
           <Header/>
-          <main>
+          <main style={{ flex: 1 }}>
               {children}
           </main>
           <Footer/>

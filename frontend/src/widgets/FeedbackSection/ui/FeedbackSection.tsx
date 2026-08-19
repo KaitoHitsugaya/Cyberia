@@ -6,16 +6,12 @@ import Link from "next/link";
 import FeedbackImage from '@/shared/assets/images/FeedbackImage.png'
 import FeedbackArrowImage from '@/shared/assets/images/FeedbackArrowImage.png'
 import FeedbackStarImage from '@/shared/assets/images/FeedbackStarImage.png'
-import {MaxIcon, TelegramIcon, VkIcon} from "@/shared/assets/icons";
-const iconMap = {
-    telegram: TelegramIcon,
-    max: MaxIcon,
-    vk: VkIcon,
-} as const;
+import { iconMap } from "@/shared/lib/iconMap";
+import {clsx} from "clsx";
 
 export const FeedbackSection = () => {
     return (
-        <div className={S.FeedbackSection}>
+        <div className={clsx('container', S.FeedbackSection)}>
             <Image className={S.FeedbackSectionBackground} src={FeedbackStarImage} alt={''}/>
             <div className={S.FeedbackSectionBlock}>
                 <Image src={FeedbackImage} alt={''}/>
@@ -38,7 +34,7 @@ export const FeedbackSection = () => {
                             const Icon = iconMap[social.icon];
                             return (
                                 <Link key={social.label} href={social.href} className={S.FooterRowColLink} aria-label={social.label} target="_blank">
-                                    <Icon isWhite={true} />
+                                    <Icon isWhite />
                                 </Link>
                             );
                         })}
