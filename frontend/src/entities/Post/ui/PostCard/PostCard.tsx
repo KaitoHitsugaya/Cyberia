@@ -23,6 +23,7 @@ export const PostCard = ({id, title, description, image, date, slug}: PostCardPr
                         src={image}
                         alt={title}
                         fill
+                        unoptimized
                         sizes="(max-width: 768px) 100vw, 33vw"
                         style={{ objectFit: 'cover' }}
                     />

@@ -120,17 +120,17 @@ export const NewsSection = () => {
     const [visibleCount, setVisibleCount] = useState(3);
     const [loading, setLoading] = useState(false);
 
-    useEffect(() => {
-        setNewsItems(MOCK_DATA.items);
-    }, []);
     // useEffect(() => {
-    //     const fetchNews = async () => {
-    //         const response = await fetch('/api/posts');
-    //         const data = await response.json();
-    //         setNewsItems(data.data.items);
-    //     };
-    //     fetchNews();
+    //     setNewsItems(MOCK_DATA.items);
     // }, []);
+    useEffect(() => {
+        const fetchNews = async () => {
+            const response = await fetch('/api/posts');
+            const data = await response.json();
+            setNewsItems(data.data.items);
+        };
+        fetchNews();
+    }, []);
 
     const handleLoadMore = () => {
         setLoading(true);
